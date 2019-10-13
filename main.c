@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erosella <erosella@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 14:11:14 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/13 14:35:16 by erosella         ###   ########.fr       */
+/*   Created: 2019/10/13 14:08:48 by erosella          #+#    #+#             */
+/*   Updated: 2019/10/13 14:59:23 by erosella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_H
-# define FILLIT_H
+#include "fillit.h"
+#include <stdio.h>
 
-# include <unistd.h>
-# include <fcntl.h>
-# include "./libft/libft.h"
+int		main(int argc, char **argv)
+{
+	int		fd;
+	char	str[500];
+	int		byte;
 
-int		valid(char *buf, int size);
-int		charcount(char *buf);
-int		adjacency_counter(char *buf);
-
-#endif
+	if (argc != 2)
+	{
+		ft_putstr("usage: ./fillit source_file\n");
+		return (1);
+	}
+	fd = open(argv[1], O_RDONLY);
+	byte = read(fd, str, 500);
+	close(fd);
+	valid(str, byte);
+	return (0);
+}
