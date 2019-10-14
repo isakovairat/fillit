@@ -6,7 +6,7 @@
 /*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 14:08:48 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/14 12:57:32 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/14 17:04:17 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ int		main(int argc, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	byte = read(fd, str, 545);
 	close(fd);
-	valid(str, byte);
+	if (!valid(str, byte) || (byte > 544 || byte < 19))
+	{
+		ft_putstr("error\n");
+		exit(0);
+	}
 	return (0);
 }

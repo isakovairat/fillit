@@ -6,12 +6,37 @@
 /*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:47:54 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/14 13:04:24 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/14 18:17:25 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 #include <stdio.h>
+
+t_block	*make_list(char *str, int size)
+{
+	t_block *head;
+	t_block *current;
+
+}
+
+t_block	*make_block(char *str)
+{
+	t_block *new;
+	int		i;
+	char	letter;
+
+	letter = 'A';
+	i = 0;
+	if (!(new = (t_block*)malloc(sizeof(t_block))))
+		return (NULL);
+	while (i < 20)
+	{
+		new->letter = letter;
+		ft_strncpy(new->str, str, 19);
+	}
+	return (new);
+}
 
 //	Считаем символы
 
@@ -75,7 +100,7 @@ int		adjacency_counter(char *str)
 }
 
 // Проверка на валидность
-
+//size == strlen(str) ????????
 int		valid(char *str, int size)
 {
 	int i;
