@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erosella <erosella@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 14:08:48 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/13 15:37:22 by erosella         ###   ########.fr       */
+/*   Updated: 2019/10/14 12:57:32 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int		main(int argc, char **argv)
 	int		fd;
 	char	str[545];
 	int		byte;
-	int		i;
 
 	if (argc != 2)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   valid.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erosella <erosella@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:47:54 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/13 15:39:27 by erosella         ###   ########.fr       */
+/*   Updated: 2019/10/14 13:04:24 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ int		charcount(char *str)
 	while (i < 19)
 	{
 		if (str[i] && str[i] != '\n' && str[i] != '#' && str[i] != '.')
-			return (0);
+			return (FALSE);
 		if (str[i] == '\n' && !(((i + 1) % 5) == 0))
-			return (0);
+			return (FALSE);
 		if (str[i] == '#')
 			count++;
 		i++;
 	}
 	if (!str[i] || str[i] != '\n')
-		return (0);
+		return (FALSE);
 	return (count);
 }
 
@@ -85,16 +85,16 @@ int		valid(char *str, int size)
 	{
 		if (charcount(str + i) != 4)
 		{
-			printf("Block is invalid\n");
-			return (0);
+			// ft_putstr("Block is invalid\n");
+			return (FALSE);
 		}
 		if (adjacency_counter(str + i) != 6 && adjacency_counter(str+ i) != 8)
 		{
-			printf("Block is invalid\n");
-			return (0);
+			// ft_putstr("Block is invalid\n");
+			return (FALSE);
 		}
 		i += 21;
-		printf("Block is valid\n");
+		// ft_putstr("Block is valid\n");
 	}
-	return (1);
+	return (TRUE);
 }

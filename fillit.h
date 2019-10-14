@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erosella <erosella@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 14:11:14 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/13 14:35:16 by erosella         ###   ########.fr       */
+/*   Updated: 2019/10/14 13:04:07 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include "./libft/libft.h"
+
+# define TRUE 1
+# define FALSE 0
 
 int		valid(char *buf, int size);
 int		charcount(char *buf);
