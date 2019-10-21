@@ -6,7 +6,7 @@
 /*   By: erosella <erosella@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:47:54 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/21 19:15:04 by erosella         ###   ########.fr       */
+/*   Updated: 2019/10/21 19:58:12 by erosella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,19 @@ void	print_list(t_block	*head)
 		tmp = tmp->next;
 		i++;
 	}
+}
+
+void	free_list(t_block *block)
+{
+	t_block	*temp;
+
+	while(block)
+	{
+		temp = block;
+		block = block->next;
+		free(temp);
+	}
+
 }
 
 int		count_in_list(t_block *head)

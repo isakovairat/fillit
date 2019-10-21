@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+         #
+#    By: erosella <erosella@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/14 14:10:22 by ycameron          #+#    #+#              #
-#    Updated: 2019/10/21 15:22:01 by ycameron         ###   ########.fr        #
+#    Updated: 2019/10/21 19:53:49 by erosella         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,10 @@ HEADER = fillit.h
 
 all: $(NAME)
 
-$(NAME):
+%.o: %.c
+	$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
+
+$(NAME): 
 	make -C $(LIB)
 	$(CC) $(FLAGS) -o $(NAME) $(SOURCES) -I $(HEADER) -L $(LIB) -lft
 
