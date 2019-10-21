@@ -6,7 +6,7 @@
 /*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:47:54 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/21 17:30:52 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/21 18:09:46 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ t_block	*make_list(char *str, int size)
 	char letter;
 
 	i = 0;
-	// printf("str in make_list() = %s, size = %d\n", str, size);
 	letter = 'A';
 	while (i < size)
 	{
@@ -35,12 +34,9 @@ t_block	*make_list(char *str, int size)
 			current->next = make_block(str + i, letter);
 			current = current->next;
 		}
-		// printf("str + %d:\n%s\n", i, str + i);
 		letter++;
 		i += 21;
-		// printf("%d\n", i);
 	}
-	// current = make_block(str + i - 21, letter);
 	current->next = NULL;
 	return(head);
 }
@@ -51,8 +47,7 @@ t_block	*make_block(char *str, char letter)
 
 	if (!(new = (t_block*)malloc(sizeof(t_block))))
 		return (NULL);
-	new->str = ft_strncpy(new->str, str, 19);
-	// new->str = "hui";
+	new_str 
 	new->letter = letter;
 	return (new);
 }
@@ -64,7 +59,7 @@ void	print_list(t_block	*head)
 
 	i = 0;
 	tmp = head;
-	while(tmp)
+	while(tmp != NULL)
 	{
 		printf("[%c]:\n%s\n->\n", tmp->letter, tmp->str);
 		tmp = tmp->next;
