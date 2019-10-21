@@ -6,7 +6,7 @@
 /*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:47:54 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/14 18:17:25 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/21 16:34:20 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,73 @@ t_block	*make_list(char *str, int size)
 {
 	t_block *head;
 	t_block *current;
+	int i;
+	char letter;
 
+	i = 0;
+	printf("str in make_list() = %s, size = %d\n", str, size);
+	letter = 'A';
+	while (i < size)
+	{
+		if (letter == 'A' && i == 0)
+		{
+			head = make_block(str + i, letter);
+			current = head;
+		}
+		else
+		{
+			current->next = make_block(str + i, letter);
+			current = current->next;
+		}
+		current = make_block(str + i, letter);
+		letter++;
+		i += 21;
+		printf("%d\n", i);
+	}
+	current->next = NULL;
+	return(head);
 }
 
-t_block	*make_block(char *str)
+t_block	*make_block(char *str, char letter)
 {
 	t_block *new;
-	int		i;
-	char	letter;
 
-	letter = 'A';
-	i = 0;
 	if (!(new = (t_block*)malloc(sizeof(t_block))))
 		return (NULL);
-	while (i < 20)
-	{
-		new->letter = letter;
-		ft_strncpy(new->str, str, 19);
-	}
+	// ft_strncpy(new->str, str, 19);
+	new->str = "hui";
+	new->letter = letter;
 	return (new);
+}
+
+void	print_list(t_block	*head)
+{
+	t_block *tmp;
+	int i;
+
+	i = 0;
+	tmp = head;
+	while(tmp->next != NULL)
+	{
+		printf("[%d]:\n%s\n->\n", i, tmp->str);
+		tmp = tmp->next;
+		i++;
+	}
+}
+
+int		count_in_list(t_block *head)
+{
+	int count;
+	t_block *current;
+
+	current = head;
+	count = 0;
+	while(current->next != NULL)
+	{
+		count++;
+		current = current->next;
+	}
+	return(count);
 }
 
 //	Считаем символы
@@ -47,6 +95,7 @@ int		charcount(char *str)
 
 	count = 0;
 	i = 0;
+
 	while (i < 19)
 	{
 		if (str[i] && str[i] != '\n' && str[i] != '#' && str[i] != '.')
@@ -105,6 +154,8 @@ int		valid(char *str, int size)
 {
 	int i;
 
+	// printf("strlen(str) = %zu\n", ft_strlen(str));
+	// printf("size = %d\n", size);
 	i = 0;
 	while (i <= size)
 	{
