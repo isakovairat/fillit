@@ -6,7 +6,7 @@
 /*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:47:54 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/21 16:34:20 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/21 17:30:52 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ t_block	*make_list(char *str, int size)
 	char letter;
 
 	i = 0;
-	printf("str in make_list() = %s, size = %d\n", str, size);
+	// printf("str in make_list() = %s, size = %d\n", str, size);
 	letter = 'A';
 	while (i < size)
 	{
-		if (letter == 'A' && i == 0)
+		if (letter == 'A')
 		{
 			head = make_block(str + i, letter);
 			current = head;
@@ -35,11 +35,12 @@ t_block	*make_list(char *str, int size)
 			current->next = make_block(str + i, letter);
 			current = current->next;
 		}
-		current = make_block(str + i, letter);
+		// printf("str + %d:\n%s\n", i, str + i);
 		letter++;
 		i += 21;
-		printf("%d\n", i);
+		// printf("%d\n", i);
 	}
+	// current = make_block(str + i - 21, letter);
 	current->next = NULL;
 	return(head);
 }
@@ -50,8 +51,8 @@ t_block	*make_block(char *str, char letter)
 
 	if (!(new = (t_block*)malloc(sizeof(t_block))))
 		return (NULL);
-	// ft_strncpy(new->str, str, 19);
-	new->str = "hui";
+	new->str = ft_strncpy(new->str, str, 19);
+	// new->str = "hui";
 	new->letter = letter;
 	return (new);
 }
@@ -63,9 +64,9 @@ void	print_list(t_block	*head)
 
 	i = 0;
 	tmp = head;
-	while(tmp->next != NULL)
+	while(tmp)
 	{
-		printf("[%d]:\n%s\n->\n", i, tmp->str);
+		printf("[%c]:\n%s\n->\n", tmp->letter, tmp->str);
 		tmp = tmp->next;
 		i++;
 	}
@@ -78,7 +79,7 @@ int		count_in_list(t_block *head)
 
 	current = head;
 	count = 0;
-	while(current->next != NULL)
+	while(current)
 	{
 		count++;
 		current = current->next;
