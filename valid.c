@@ -6,7 +6,7 @@
 /*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:47:54 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/21 19:44:51 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/22 15:06:11 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,19 @@ void	print_list(t_block	*head)
 		tmp = tmp->next;
 		i++;
 	}
+}
+
+void	free_list(t_block *block)
+{
+	t_block	*temp;
+
+	while(block)
+	{
+		temp = block;
+		block = block->next;
+		free(temp);
+	}
+
 }
 
 int		count_in_list(t_block *head)
