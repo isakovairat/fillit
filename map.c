@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erosella <erosella@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 15:08:24 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/19 15:14:10 by erosella         ###   ########.fr       */
+/*   Updated: 2019/10/22 15:27:59 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ t_map	*new_map(int map_size)
 	return (map);
 }
 
-size_t	count_pieces(t_block *piecelist)
+size_t	count_blocks(t_block *block)
 {
 	size_t	count;
 
 	count = 0;
-	while (piecelist)
+	while (block)
 	{
-		piecelist = piecelist->next;
+		block = block->next;
 		count++;
 	}
 	return (count);

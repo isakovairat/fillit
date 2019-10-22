@@ -6,7 +6,7 @@
 /*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:47:54 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/22 15:06:11 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/22 15:50:25 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,23 +42,7 @@ t_block	*make_list(char *str, int size)
 	return(head);
 }
 
-void	shift_x(t_block *block, int n)
-{
-	block->coord[0] += n;
-	block->coord[2] += n;
-	block->coord[4] += n;
-	block->coord[6] += n;
-}
-
-void	shift_y(t_block *block, int n)
-{
-	block->coord[1] += n;
-	block->coord[3] += n;
-	block->coord[5] += n;
-	block->coord[7] += n;
-}
-
-t_block *get_cord(char *str, t_block *block)
+t_block		*get_cord(char *str, t_block *block)
 {
 	int i;
 	int x;
@@ -78,17 +62,7 @@ t_block *get_cord(char *str, t_block *block)
 		}
 		i++;
 	}
-	while (block->coord[0] != 0 && \
-			block->coord[2] != 0 && \
-			block->coord[4] != 0 && \
-			block->coord[6] != 0)
-		shift_x(block, -1);
-	while (block->coord[1] != 0 && \
-			block->coord[3] != 0 && \
-			block->coord[5] != 0 && \
-			block->coord[7] != 0)
-		shift_y(block, -1);
-	return (block);
+	return (shift(block));
 }
 
 t_block	*make_block(char *str, char letter)
@@ -120,18 +94,17 @@ void	free_list(t_block *block)
 {
 	t_block	*temp;
 
-	while(block)
+	while(block != NULL)
 	{
 		temp = block;
 		block = block->next;
 		free(temp);
 	}
-
 }
 
-int		count_in_list(t_block *head)
+size_t		count_in_list(t_block *head)
 {
-	int count;
+	size_t count;
 	t_block *current;
 
 	current = head;

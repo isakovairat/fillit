@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: erosella <erosella@student.42.fr>          +#+  +:+       +#+         #
+#    By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/14 14:10:22 by ycameron          #+#    #+#              #
-#    Updated: 2019/10/21 19:53:49 by erosella         ###   ########.fr        #
+#    Updated: 2019/10/22 15:17:58 by ycameron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ all: $(NAME)
 %.o: %.c
 	$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
 
-$(NAME): 
+$(NAME):
 	make -C $(LIB)
 	$(CC) $(FLAGS) -o $(NAME) $(SOURCES) -I $(HEADER) -L $(LIB) -lft
 
