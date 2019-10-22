@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   valid.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erosella <erosella@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:47:54 by erosella          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2019/10/21 18:09:46 by ycameron         ###   ########.fr       */
-=======
-/*   Updated: 2019/10/21 19:15:04 by erosella         ###   ########.fr       */
->>>>>>> kef
+/*   Updated: 2019/10/21 19:44:51 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,10 +97,6 @@ t_block	*make_block(char *str, char letter)
 
 	if (!(new = (t_block*)malloc(sizeof(t_block))))
 		return (NULL);
-<<<<<<< HEAD
-	new_str 
-=======
->>>>>>> kef
 	new->letter = letter;
 	return (get_cord(str,new));
 }
