@@ -6,7 +6,7 @@
 /*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 14:08:48 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/22 15:09:20 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/24 19:07:34 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		main(int argc, char **argv)
 	if (argc != 2)
 	{
 		ft_putstr("usage: ./fillit source_file\n");
-		return (1);
+		return (TRUE);
 	}
 	fd = open(argv[1], O_RDONLY);
 	byte = read(fd, str, 545);
@@ -38,6 +38,8 @@ int		main(int argc, char **argv)
 	head = make_list(str, byte);
 	print_list(head);
 	// printf("%d in linked list", count_in_list(head));
-	// free_list(head); ????
+//	printf("\n");
+	finder(head);
+	free_list(head);
 	return (0);
 }

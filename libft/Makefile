@@ -22,7 +22,7 @@ ft_strchr.c ft_strrchr.c ft_strstr.c ft_strnstr.c ft_strcmp.c ft_strncmp.c \
 ft_atoi.c ft_strnew.c ft_strdel.c ft_strclr.c ft_striter.c ft_striteri.c \
 ft_strmap.c ft_strmapi.c ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c \
 ft_strtrim.c ft_strndup.c ft_lstadd.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c \
-ft_lstiter.c ft_lstmap.c ft_numlen.c ft_itoa.c ft_cwords.c ft_strsplit.c \
+ft_lstiter.c ft_lstmap.c ft_numlen.c ft_itoa.c ft_strsplit.c \
 ft_wordlen.c ft_delstr.c ft_word_delim.c ft_min.c ft_max.c ft_lstrev.c \
 ft_strchri.c
 

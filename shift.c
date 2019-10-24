@@ -6,11 +6,23 @@
 /*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 15:16:51 by ycameron          #+#    #+#             */
-/*   Updated: 2019/10/24 11:03:04 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/24 11:17:38 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+size_t	    round_sqrt(int num)
+{
+	int size;
+
+	size = MINMAP;
+	while (size * size < num)
+	{
+		size++;
+	}
+	return (size);
+}
 
 void	shift_x(t_block *block)
 {

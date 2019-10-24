@@ -29,19 +29,6 @@ t_map	*new_map(int map_size)
 	return (map);
 }
 
-size_t	count_blocks(t_block *block)
-{
-	size_t	count;
-
-	count = 0;
-	while (block)
-	{
-		block = block->next;
-		count++;
-	}
-	return (count);
-}
-
 void	print_map(t_map *map, int size)
 {
 	int i;
