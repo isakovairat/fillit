@@ -6,7 +6,7 @@
 /*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 14:11:14 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/22 15:49:16 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/24 11:03:17 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ size_t				count_blocks(t_block *block);
 void				print_map(t_map *map, int size);
 void				free_map(t_map *map, int map_size);
 t_block				*get_cord(char *str, t_block *block);
-void				shift_x(t_block *block, int n);
-void				shift_y(t_block *block, int n);
+void				shift_x(t_block *block);
+void				shift_y(t_block *block);
 t_block				*shift(t_block *block);
 
 #endif
