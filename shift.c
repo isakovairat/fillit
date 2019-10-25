@@ -6,51 +6,43 @@
 /*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 15:16:51 by ycameron          #+#    #+#             */
-/*   Updated: 2019/10/24 11:17:38 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/25 17:46:26 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-size_t	    round_sqrt(int num)
+void		shift_axis(t_block *block, int axis)
 {
-	int size;
-
-	size = MINMAP;
-	while (size * size < num)
+	if (axis == X)
 	{
-		size++;
+		while(axis <= 6)
+		{
+			block->coord[axis]--;
+			axis += 2;
+		}
 	}
-	return (size);
-}
-
-void	shift_x(t_block *block)
-{
-	block->coord[0]--;
-	block->coord[2]--;
-	block->coord[4]--;
-	block->coord[6]--;
-}
-
-void	shift_y(t_block *block)
-{
-	block->coord[1]--;
-	block->coord[3]--;
-	block->coord[5]--;
-	block->coord[7]--;
+	else
+	{
+		while(axis <= 7)
+		{
+			block->coord[axis]--;
+			axis += 2;
+		}
+	}
 }
 
 t_block		*shift(t_block *block)
 {
-	while (block->coord[0] != 0 && \
-			block->coord[2] != 0 && \
-			block->coord[4] != 0 && \
-			block->coord[6] != 0)
-		shift_x(block);
-	while (block->coord[1] != 0 && \
-			block->coord[3] != 0 && \
-			block->coord[5] != 0 && \
-			block->coord[7] != 0)
-		shift_y(block);
-	return(block);
+	while (block->coord[0] != 0 &&
+	block->coord[2] != 0 &&
+	block->coord[4] != 0 &&
+	block->coord[6] != 0)
+		shift_axis(block, X);
+	while (block->coord[1] != 0 &&
+	block->coord[3] != 0 &&
+	block->coord[5] != 0 &&
+	block->coord[7] != 0)
+		shift_axis(block, Y);
+	return (block);
 }

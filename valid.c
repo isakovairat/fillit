@@ -6,43 +6,19 @@
 /*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:47:54 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/24 18:52:37 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/25 17:49:24 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-t_block		*get_cord(char const *str, t_block *block)
-{
-	int i;
-	int x;
-	int y;
-
-	i = 0;
-	x = 0;
-	y = 1;
-	while (i < 19)
-	{
-		if (*(str + i) == '#')
-		{
-			block->coord[x] = i / 5;
-			block->coord[y] = (i >= 5) ? i % 5 : i;
-			x += 2;
-			y += 2;
-		}
-		i++;
-	}
-	return (shift(block));
-}
-
-int		charcount(char *str)
+int static		count_chars(char const *str)
 {
 	int i;
 	int count;
 
 	count = 0;
 	i = 0;
-
 	while (i < 19)
 	{
 		if (str[i] && str[i] != '\n' && str[i] != '#' && str[i] != '.')
@@ -58,7 +34,7 @@ int		charcount(char *str)
 	return (count);
 }
 
-int		adjacency_counter(char const *str)
+int	static		adjacency_counter(char const *str)
 {
 	int i;
 	int count;
@@ -83,18 +59,18 @@ int		adjacency_counter(char const *str)
 	return (count);
 }
 
-int		valid(char *str, int size)
+int			valid(char *str, int size)
 {
 	int i;
 
 	i = 0;
 	while (i <= size)
 	{
-		if (charcount(str + i) != 4)
-        {
+		if (count_chars(str + i) != 4)
+		{
 			return (FALSE);
 		}
-		if (adjacency_counter(str + i) != 6 && adjacency_counter(str+ i) != 8)
+		if (adjacency_counter(str + i) != 6 && adjacency_counter(str + i) != 8)
 		{
 			return (FALSE);
 		}

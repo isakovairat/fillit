@@ -6,11 +6,23 @@
 /*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 15:08:24 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/22 15:27:59 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/25 17:56:04 by ycameron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+size_t		get_map_size(int num)
+{
+	int size;
+
+	size = MINMAP;
+	while (size * size < num)
+	{
+		size++;
+	}
+	return (size);
+}
 
 t_map	*new_map(int map_size)
 {
