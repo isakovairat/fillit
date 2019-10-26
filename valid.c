@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   valid.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: erosella <erosella@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:47:54 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/25 17:49:24 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/26 12:26:00 by erosella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int static		count_chars(char const *str)
+int			count_chars(char const *str)
 {
-	int i;
-	int count;
+	int		i;
+	int		count;
 
 	count = 0;
 	i = 0;
@@ -34,10 +34,10 @@ int static		count_chars(char const *str)
 	return (count);
 }
 
-int	static		adjacency_counter(char const *str)
+int			adjacency_counter(char const *str)
 {
-	int i;
-	int count;
+	int		i;
+	int		count;
 
 	i = 0;
 	count = 0;
@@ -61,7 +61,7 @@ int	static		adjacency_counter(char const *str)
 
 int			valid(char *str, int size)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (i <= size)

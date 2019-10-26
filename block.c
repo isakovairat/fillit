@@ -3,21 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   block.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: erosella <erosella@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 18:19:06 by ycameron          #+#    #+#             */
-/*   Updated: 2019/10/25 17:07:22 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/26 12:21:33 by erosella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
-t_block		*get_cord(char const *str, t_block *block)
+t_block			*get_cord(char const *str, t_block *block)
 {
-	int i;
-	int x;
-	int y;
+	int			i;
+	int			x;
+	int			y;
 
 	i = 0;
 	x = 0;
