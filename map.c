@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: erosella <erosella@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 15:08:24 by erosella          #+#    #+#             */
-/*   Updated: 2019/10/25 17:56:04 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/26 12:19:38 by erosella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t		get_map_size(int num)
 {
-	int size;
+	int		size;
 
 	size = MINMAP;
 	while (size * size < num)
@@ -24,7 +24,7 @@ size_t		get_map_size(int num)
 	return (size);
 }
 
-t_map	*new_map(int map_size)
+t_map		*new_map(int map_size)
 {
 	t_map	*map;
 	int		i;
@@ -41,9 +41,9 @@ t_map	*new_map(int map_size)
 	return (map);
 }
 
-void	print_map(t_map *map, int size)
+void		print_map(t_map *map, int size)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (i < size)
@@ -54,9 +54,9 @@ void	print_map(t_map *map, int size)
 	}
 }
 
-void	free_map(t_map *map, int map_size)
+void		free_map(t_map *map, int map_size)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (i < map_size)

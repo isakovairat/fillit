@@ -3,20 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+         #
+#    By: erosella <erosella@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/14 14:10:22 by ycameron          #+#    #+#              #
-#    Updated: 2019/10/25 16:50:33 by ycameron         ###   ########.fr        #
+#    Updated: 2019/10/26 12:34:30 by erosella         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=fillit
-CC=gcc
-CFLAGS=-Wall -Wextra -Werror
-LIB=libft
-SOURCES=valid.c block.c shift.c map.c finder.c main.c
-OBJECTS=$(SOURCES:%.c=%.o)
-HEADER=fillit.h
+NAME = fillit
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+LIB = libft
+SOURCES = valid.c block.c shift.c map.c finder.c main.c
+OBJECTS = $(SOURCES:%.c=%.o)
+HEADER = fillit.h
 
 .PHONY: all clean fclean re
 

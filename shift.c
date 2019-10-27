@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   shift.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: erosella <erosella@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 15:16:51 by ycameron          #+#    #+#             */
-/*   Updated: 2019/10/25 17:46:26 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/26 12:18:51 by erosella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void		shift_axis(t_block *block, int axis)
 {
 	if (axis == X)
 	{
-		while(axis <= 6)
+		while (axis <= 6)
 		{
 			block->coord[axis]--;
 			axis += 2;
@@ -24,7 +24,7 @@ void		shift_axis(t_block *block, int axis)
 	}
 	else
 	{
-		while(axis <= 7)
+		while (axis <= 7)
 		{
 			block->coord[axis]--;
 			axis += 2;
