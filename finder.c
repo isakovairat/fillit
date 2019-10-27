@@ -29,8 +29,6 @@ int			overlap(t_map *map, t_block *block)
 		x = block->coord[i] + block->x_offset;
 		y = block->coord[i + 1] + block->y_offset;
 	}
-	print_map(map, 4);
-	printf("\n");
 	return (i == 8);
 }
 
@@ -52,7 +50,7 @@ void		place(t_block *block, t_map *map, char letter)
 	}
 }
 
-int			in_bounds(t_block *block, int map_size, char axis)
+int			inside(t_block *block, int map_size, char axis)
 {
 	if (axis == 'y')
 		return (block->coord[1] + block->y_offset < map_size &&
@@ -72,11 +70,11 @@ int			solve_map(t_map *map, t_block *block, int map_size)
 		return (TRUE);
 	block->x_offset = 0;
 	block->y_offset = 0;
-	while (in_bounds(block, map_size, 'y'))
+	while (inside(block, map_size, 'y'))
 	{
-		while (in_bounds(block, map_size, 'x'))
+		while (inside(block, map_size, 'x'))
 		{
-			if (overlap(map, block)) // == 1
+			if (overlap(map, block))
 			{
 				place(block, map, block->letter);
 				if (solve_map(map, block->next, map_size))
@@ -97,7 +95,7 @@ int			solve_map(t_map *map, t_block *block, int map_size)
 void		finder(t_block *head)
 {
 	t_map	*map;
-	int		map_size;
+	size_t	map_size;
 
 	map_size = get_map_size(count_in_list(head) * 4);
 	map = new_map(map_size);
