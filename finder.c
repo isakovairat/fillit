@@ -29,7 +29,9 @@ int			overlap(t_map *map, t_block *block)
 		x = block->coord[i] + block->x_offset;
 		y = block->coord[i + 1] + block->y_offset;
 	}
-	return (i != 8);
+	print_map(map, 4);
+	printf("\n");
+	return (i == 8);
 }
 
 void		place(t_block *block, t_map *map, char letter)
@@ -75,14 +77,14 @@ int			in_bounds(t_block *block, int map_size, char axis)
 int			solve_map(t_map *map, t_block *block, int map_size)
 {
 	if (!block)
-		return (1);
+		return (TRUE);
 	block->x_offset = 0;
 	block->y_offset = 0;
 	while (in_bounds(block, map_size, 'y'))
 	{
 		while (in_bounds(block, map_size, 'x'))
 		{
-			if (!overlap(map, block))
+			if (overlap(map, block)) // == 1
 			{
 				place(block, map, block->letter);
 				if (solve_map(map, block->next, map_size))
