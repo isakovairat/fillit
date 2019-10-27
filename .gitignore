@@ -5,3 +5,4 @@ CMakeLists.txt
 cmake-build-debug
 *.a
 README.md
+example
