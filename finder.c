@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   finder.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycameron <ycameron@student.42.fr>          +#+  +:+       +#+        */
+/*   By: erosella <erosella@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 18:24:29 by ycameron          #+#    #+#             */
-/*   Updated: 2019/10/25 17:45:57 by ycameron         ###   ########.fr       */
+/*   Updated: 2019/10/27 14:57:05 by erosella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,6 @@ int			in_bounds(t_block *block, int map_size, char axis)
 		block->coord[6] + block->x_offset < map_size);
 }
 
-/*
-** While in bounds, if it doesn't overlap place the piece. Use recursion
-** to check if the rest can fit with the current piece placed where it is.
-**  Otherwise it backtracks and moves current piece
-** then checks if all the pieces that come after fit with current piece moved.
-** place() can either place the piece or place '.' to clear a piece.
-*/
-
 int			solve_map(t_map *map, t_block *block, int map_size)
 {
 	if (!block)
@@ -99,10 +91,6 @@ int			solve_map(t_map *map, t_block *block, int map_size)
 	}
 	return (FALSE);
 }
-
-/*
-** Start with the smallest map map_size for number of blocks in pieces.
-*/
 
 void		finder(t_block *head)
 {
