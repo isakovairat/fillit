@@ -13,28 +13,29 @@
 NAME = fillit
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-LIB = libft
-SOURCES = valid.c block.c shift.c map.c finder.c main.c
-OBJECTS = $(SOURCES:%.c=%.o)
+SOURCES = block.c shift.c map.c finder.c main.c valid.c
+OBJECTS = $(SOURCES:.c=.o)
 HEADER = fillit.h
-
-.PHONY: all clean fclean re
 
 all: $(NAME)
 
-%.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
+$(NAME): libft/libft.a $(OBJECTS)
+	$(CC) $(OBJECTS) libft/libft.a -I libft -o $(NAME)
 
-$(NAME):
-	make -C $(LIB)
-	$(CC) $(FLAGS) -o $(NAME) $(SOURCES) -I $(HEADER) -L $(LIB) -lft
+%.o: %.c fillit.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	/bin/rm -f $(OBJECTS)
-	make -C $(LIB) clean
+	rm -f $(OBJECTS)
+	make clean -C libft
 
 fclean: clean
-	/bin/rm -f $(NAME)
-	make -C $(LIB) fclean
+	rm -f $(NAME)
+	rm -f libft/libft.a
 
 re: fclean all
+
+libft/libft.a:
+	make -C libft
+
+.PHONY: all clean fclean re
