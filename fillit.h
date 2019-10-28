@@ -53,7 +53,7 @@ t_block				*shift(t_block *block);
 size_t				get_map_size(int num);
 int					overlap(t_map *map, t_block *block);
 void				place(t_block *block, t_map *map, char letter);
-int			        inside(t_block *block, int map_size, char axis);
+int					inside(t_block *block, int map_size, char axis);
 int					solve_map(t_map *map, t_block *block, int map_size);
 void				finder(t_block *head);
 

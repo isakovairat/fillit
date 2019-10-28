@@ -16,7 +16,7 @@ size_t		get_map_size(int num)
 {
 	int		size;
 
-	size = MINMAP;
+	size = MINMAP;cd
 	while (size * size < num)
 	{
 		size++;

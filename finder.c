@@ -19,8 +19,6 @@ int			overlap(t_map *map, t_block *block)
 	int		y;
 
 	i = 0;
-	x = 0;
-	y = 0;
 	x = block->coord[i] + block->x_offset;
 	y = block->coord[i + 1] + block->y_offset;
 	while (i <= 6 && map->arr[y][x] == '.')
@@ -39,8 +37,6 @@ void		place(t_block *block, t_map *map, char letter)
 	int y;
 
 	i = 0;
-	x = 0;
-	y = 0;
 	while (i <= 6)
 	{
 		x = block->coord[i] + block->x_offset;
