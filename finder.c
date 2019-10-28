@@ -46,7 +46,7 @@ void		place(t_block *block, t_map *map, char letter)
 	}
 }
 
-int			inside(t_block *block, int map_size, char axis)
+int			inside(t_block *block, size_t map_size, char axis)
 {
 	if (axis == 'y')
 		return (block->coord[1] + block->y_offset < map_size &&
@@ -60,7 +60,7 @@ int			inside(t_block *block, int map_size, char axis)
 		block->coord[6] + block->x_offset < map_size);
 }
 
-int			solve_map(t_map *map, t_block *block, int map_size)
+int			solve_map(t_map *map, t_block *block, size_t map_size)
 {
 	if (!block)
 		return (TRUE);

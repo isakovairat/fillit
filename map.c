@@ -12,11 +12,11 @@
 
 #include "fillit.h"
 
-size_t		get_map_size(int num)
+size_t		get_map_size(size_t num)
 {
 	int		size;
 
-	size = MINMAP;cd
+	size = MINMAP;
 	while (size * size < num)
 	{
 		size++;

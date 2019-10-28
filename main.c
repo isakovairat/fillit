@@ -27,7 +27,7 @@ int		main(int argc, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	byte = read(fd, str, 545);
 	close(fd);
-	if (!valid(str, byte) || (byte > 544 || byte < 19))
+	if (!valid(str, byte) || (byte >= 545 || byte < 19))
 	{
 		ft_putstr("error\n");
 		exit(0);

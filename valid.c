@@ -29,7 +29,7 @@ int			count_chars(char const *str)
 			count++;
 		i++;
 	}
-	if (!str[i] || str[i] != '\n')
+	if (!str[i])
 		return (FALSE);
 	return (count);
 }
@@ -64,7 +64,7 @@ int			valid(char *str, int size)
 	int		i;
 
 	i = 0;
-	while (i <= size)
+	while (i < size)
 	{
 		if (count_chars(str + i) != 4)
 		{
@@ -76,5 +76,6 @@ int			valid(char *str, int size)
 		}
 		i += 21;
 	}
+	printf("i = %d\n",i);
 	return (TRUE);
 }
