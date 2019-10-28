@@ -76,6 +76,5 @@ int			valid(char *str, int size)
 		}
 		i += 21;
 	}
-	printf("i = %d\n",i);
 	return (TRUE);
 }

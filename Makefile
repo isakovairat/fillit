@@ -26,12 +26,12 @@ $(NAME): libft/libft.a $(OBJECTS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJECTS)
+	/bin/rm -f $(OBJECTS)
 	make clean -C libft
 
 fclean: clean
-	rm -f $(NAME)
-	rm -f libft/libft.a
+	/bin/rm -f $(NAME)
+	/bin/rm -f libft/libft.a
 
 re: fclean all
 

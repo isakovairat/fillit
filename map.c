@@ -12,7 +12,7 @@
 
 #include "fillit.h"
 
-size_t		get_map_size(size_t num)
+size_t		get_map_size(int num)
 {
 	int		size;
 
