@@ -25,9 +25,9 @@ int		main(int argc, char **argv)
 		return (TRUE);
 	}
 	fd = open(argv[1], O_RDONLY);
-	byte = read(fd, str, 546);
+	byte = read(fd, str, 545);
 	close(fd);
-	if (!valid(str, byte) || (byte >= 546 || byte < 19))
+	if (!valid(str, byte) || (byte >= 545 || byte < 19))
 	{
 		ft_putstr("error\n");
 		exit(0);

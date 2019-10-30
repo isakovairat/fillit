@@ -42,7 +42,7 @@ typedef struct		s_map
 int					valid(char *str, int size);
 t_block				*make_list(char *str, int size);
 t_block				*make_block(char *str, char letter);
-int				    count_in_list(t_block *head);
+int					count_in_list(t_block *head);
 void				free_list(t_block *block);
 t_map				*new_map(int map_size);
 void				print_map(t_map *map, int map_size);

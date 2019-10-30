@@ -64,7 +64,7 @@ int			valid(char *str, int size)
 	int		i;
 
 	i = 0;
-	while (i < size)
+	while (i <= size)
 	{
 		if (count_chars(str + i) != 4)
 		{

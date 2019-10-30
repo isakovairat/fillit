@@ -85,9 +85,9 @@ void			free_list(t_block *block)
 	}
 }
 
-int			count_in_list(t_block *head)
+int				count_in_list(t_block *head)
 {
-	int		count;
+	int			count;
 	t_block		*current;
 
 	current = head;
