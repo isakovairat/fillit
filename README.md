@@ -13,7 +13,7 @@ This is the story of a piece of Tetris, one little square and a dev walk into a 
 The aim to find best packing of Tetris pieces into a square, using a recursive backtracking algorithm. But, you need to pack tetriminos(Tetris pieces) by special order, you have to put each tetrimino to the top left corner.
   
 ## Usage
-To create that executable **fillit**, after downloading/cloning this project, **cd** into the project and call **make**:
+To create that executable `fillit`, after downloading/cloning this project, **cd** into the project and call **make**:
 ```sh
     $ git clone https://github.com/iskovairat/fillit
     $ cd fillit
