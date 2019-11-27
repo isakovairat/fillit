@@ -27,6 +27,7 @@ Executable `fillit` will be created. Just call `./fillit` and you will find how 
 
     usage: ./fillit source_file
 ```
+[![asciicast](https://asciinema.org/a/6YPMiGvVZIMdudc8ZmhYGKAvh.svg)](https://asciinema.org/a/6YPMiGvVZIMdudc8ZmhYGKAvh)
 
 ## Examples
 There is an example file called `example` for you to check it out.
