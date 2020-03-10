@@ -41,7 +41,7 @@ There is an example file called `example` for you to check it out.
 ```
 
 ## Authors
-This project was made by Airat Isakov [https://github.com/isakovairat](me) and Evgeny Ovodkov [@Kefir4ek](evgen)
+This project was made by Airat Isakov [@isakovairat](https://github.com/isakovairat) and Evgeny Ovodkov [@Kefir4ek](evgen)
 
 [21]: https://21-school.ru/
 [me]: https://github.com/isakovairat
